@@ -1,0 +1,23 @@
+package com.shao.think.chapter15_generics.holder;
+//:generics/Hoder2.java
+public class Holder2 {
+    public Object get() {
+        return a;
+    }
+
+    public void set(Object a) {
+        this.a = a;
+    }
+
+    private Object a;
+    public Holder2(Object a) { this.a = a; }
+
+    public static void main(String[] args){
+        Holder2 h2 = new Holder2(new Automombile());
+        Automombile a = (Automombile) h2.get();
+        h2.set("Not an Automobile");
+        String s = (String)h2.get();
+        h2.set(1); // Autoboxes to Integer
+        Integer x = (Integer) h2.get();
+    }
+}
